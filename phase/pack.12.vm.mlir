@@ -1,0 +1,182 @@
+module attributes {vm.toplevel} {
+  vm.module public @module {
+    vm.global.ref private mutable @__device_0 : !vm.ref<!hal.device>
+    vm.global.ref private mutable @__device_0_executable_0_matmul_dynamic_dispatch_0 : !vm.ref<!hal.executable>
+    vm.rodata private @_utf8_hal_device_id_C6650FF277232B5A {alignment = 1 : i64} "hal.device.id"
+    vm.rodata private @_utf8_local_1A8FF0278D7661D8 {alignment = 1 : i64} "local*"
+    vm.rodata private @_utf8_hal_executable_format_E03EECB63A2AAF52 {alignment = 1 : i64} "hal.executable.format"
+    vm.rodata private @_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5 {alignment = 1 : i64} "embedded-elf-riscv_64"
+    vm.rodata private @matmul_dynamic_dispatch_0_embedded_elf_riscv_64 {alignment = 16 : i64, mime_type = "application/x-elf"} dense<"0x7F454C460201010000000000000000000300F30001000000000000000000000040000000000000004810000000000000050000004000380008004000160014000600000004000000400000000000000040000000000000004000000000000000C001000000000000C00100000000000008000000000000000100000004000000000000000000000000000000000000000000000000000000C804000000000000C80400000000000000100000000000000100000005000000C804000000000000C814000000000000C814000000000000EC04000000000000EC0400000000000000100000000000000100000006000000C009000000000000C029000000000000C029000000000000A001000000000000400600000000000000100000000000000200000006000000A00A000000000000A02A000000000000A02A000000000000C000000000000000C000000000000000080000000000000052E5746404000000C009000000000000C029000000000000C029000000000000A0010000000000004006000000000000010000000000000051E574640600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000070040000009D0C00000000000000000000000000000000000000000000F200000000000000F2000000000000000100000000000000000000000000000000000000000000000000000000000000010000001200070098190000000000001C0000000000000002000000020000000000000001000000000000000000000000697265655F68616C5F65786563757461626C655F6C6962726172795F7175657279000000000000C82900000000000003000000000000009003000000000000D8290000000000000300000000000000C814000000000000E0290000000000000300000000000000F003000000000000F02900000000000003000000000000001304000000000000082A00000000000003000000000000005004000000000000102A00000000000003000000000000005004000000000000202A0000000000000300000000000000C029000000000000402A0000000000000300000000000000D829000000000000482A0000000000000300000000000000B003000000000000602A0000000000000300000000000000E029000000000000782A0000000000000300000000000000E829000000000000802A0000000000000300000000000000002A0000000000006D61746D756C5F64796E616D69635F64697370617463685F3000000000000000000000000000000000000602010000000100000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000006D61746D756C5F64796E616D69635F64697370617463685F305F7061636B5F6633320064756D702F636F6E666967757265645F6D6F64756C655F6D61746D756C5F64796E616D69635F64697370617463685F302E6D6C697200000000000000001000000000000000017A5200017801011B0C020048000000180000005C100000D00400000002AC0EF00F70810188029203930494059506960797089809990A9A0B9B0C440C080003B8030C02F00F70C1C8D2D3D4D5D6D7D8D9DADB440E0000001000000064000000E01400001C000000000000000000000003B5850183264501036705018327C5000365850093960602B3E8E60093960702635410031387F8FFB3E6A6001355F7431355A5033305A70013556540634410033305A0406F00400233071041B3E6A6001355F7431355A5033305A70013556540E35010FF1305150003660600B347A6021358F5033305F502B342A6003307A640333550003375A8003383A74093173300B382F64013058000131867009383020063C4A20093038000130101812334117E2330817E233C217D2338317D2334417D2330517D233C617B2338717B2334817B2330917B233CA1792338B1791304017F13010180130101EF137101FC33850841130E000413060500233CA1026344C501130600046386F63863840839371E0000930E0104939633003383680283B30502131FB700939558003387CE01130E00081313630033080301130310002320C7012302670003B3030083B38300338EB70293172800B307F3003388E3013308C80193982800130F0000635C501A9B020600138586FF93038000130E01046F0040013308B800B387B700138F8E0063DAAE18930E0F0063505006130F0000930F08001389070093090000138A0F00930A0900130B4000938B0A00130C0A0083CC0B00130BFBFF23009C01130C1C00938B1B00E3160BFE130A4A0093891900B38A1A01E39879FC938F0F02130F1F0013094900E31A5FFAE3D6C2F8138F02006F00C000338FEF01E35ECFF6832F07003309E64163C42F01930F0900034947006302090293995F00635E300313090104B30939012300090013091900E31C39FF6F00400213993F00635E200193995F0013090104B30939012320090013094900E31C39FFE350F0FB93090000131A2F0013992F00338A4701930A0104330B3903330B6901330B6E01930B0A00138C0A0083CC0B0023009C01130C1C00938B1B00E3186CFFB38A2A0193891900330A1A01E39679FC93090000131A5F00330A4801930A0104130B0000939B2900938B4B00130C0A00938C0A00330D6903338DAB01330DAE01938D0C0093000C0003C30D00938D1D002380600093801000E398ADFF130C4C00130B1B00B38C2C01E3167BFC130A0A0293891900938A4A00E394F9FB6FF05FEE6358DF1693020104130380006F0040013308B800130F8F00B387B700635ADF14B383E641332E7000330EC041337E7E0063446E00130E800003358103E35AA0FC930E00006F00C000B38EDF01E3D2CEFC832F07003309D64163C42F01930F0900034947006302090293995F00635E300313090104B30939012300090013091900E31C39FF6F00400213993F00635E200193995F0013090104B30939012320090013094900E31C39FF13992F0063587004E35CF0F993090000139A2E00338A4701930A0104330B3903330B6901338B6201930B0A00138C0A0083CC0B0023009C01130C1C00938B1B00E3186CFFB38A2A0193891900330A1A01E396C9FDE356F0F593090000139A5E00330A4801930A0104130B0000939B2900938B4B00130C0A00938C0A00330D6903338DAB01338DA201938D0C0093000C0003C50D00938D1D002380A00093801000E398ADFF130C4C00130B1B00B38C2C01E3166BFC130A0A0293891900938A4A00E394F9FB6FF0DFED13050000130104818330817E0334017E0339817D8339017D033A817C833A017C033B817B833B017B033C817A833C017A033D8179833D01791301017F678000001B05A5FF971500003335A000938545081305F5FF3375B5006780000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000030000003500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001E000000000000000800000000000000FBFFFF6F000000000100000000000000070000000000000070020000000000000800000000000000200100000000000009000000000000001800000000000000F9FFFF6F000000000C00000000000000060000000000000000020000000000000B000000000000001800000000000000050000000000000048020000000000000A0000000000000023000000000000000400000000000000300200000000000000000000000000000000000000000000011101250E1305030E10171B0EB44219110112060000022E001101120640186E0E030E3A0B3B0B49133F190000032400030E3E0B0B0B0000004B00000004000000000008015D0000002C00000000000000000035000000C814000000000000D004000002C814000000000000D004000001583A0000003A0000000101470000000331000000050400636F6E666967757265645F6D6F64756C655F6D61746D756C5F64796E616D69635F64697370617463685F302E6D6C697200696E740064756D70006D61746D756C5F64796E616D69635F64697370617463685F305F7061636B5F663332004952454500350000000200000000004F0000002A0000006D61746D756C5F64796E616D69635F64697370617463685F305F7061636B5F6633320000000000160000000200000000004F00000047000000696E74000000000041F100000072697363760001E700000004100572763634693270315F6D3270305F613270315F663270325F643270325F633270305F763170305F7A696373723270305F7A6966656E6365693270305F7A6D6D756C3170305F7A61616D6F3170305F7A616C7273633170305F7A66686D696E3170305F7A63613170305F7A63643170305F7A76653332663170305F7A76653332783170305F7A76653634643170305F7A76653634663170305F7A76653634783170305F7A7666683170305F7A7666686D696E3170305F7A766C313238623170305F7A766C323536623170305F7A766C3332623170305F7A766C3634623170300053010000040048000000010101FB0E0D00010101010000000100000100636F6E666967757265645F6D6F64756C655F6D61746D756C5F64796E616D69635F64697370617463685F302E6D6C6972000000000005080A000902C814000000000000030C01030F4A03734A5203764A03104A4B037A4A03144A0603544A032C820500035408E40508032C4A0354083C06032C4A060354023C0106032C024801060354083C06032C4A06035482032C8206036182031F4A0500060354820508032C82035402680106032C022401060354023C01032C820682060354BA06032C4A060354F2032C4A0354083C032C4A035408E406032C083C060354023801032C4A0354BA032C4A035402600106032CBAF2060354083C032C083C0682060354BA06032C4A060354F2032C4A0354083C032C4A035408AC032C4A03548206032CF2060354023C01032C4A0354BA032C4A06025C14060B4A023C000101495245450000000000000000000000000000000000000000000000000000000000002300000000020900A02A0000000000000000000000000000010000001200070098190000000000001C00000000000000002E64796E73796D002E68617368002E64796E737472002E72656C612E64796E002E726F64617461002E65685F6672616D65002E74657874002E646174612E72656C2E726F002E64796E616D6963002E72656C726F5F70616464696E67002E64656275675F616262726576002E64656275675F696E666F002E64656275675F737472002E64656275675F7075626E616D6573002E64656275675F7075627479706573002E72697363762E61747472696275746573002E64656275675F6C696E65002E636F6D6D656E74002E73796D746162002E7368737472746162002E7374727461620000697265655F68616C5F65786563757461626C655F6C6962726172795F7175657279005F44594E414D49430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000B0000000200000000000000000200000000000000020000000000003000000000000000030000000100000008000000000000001800000000000000090000000500000002000000000000003002000000000000300200000000000018000000000000000100000000000000040000000000000004000000000000000F000000030000000200000000000000480200000000000048020000000000002300000000000000000000000000000001000000000000000000000000000000170000000400000002000000000000007002000000000000700200000000000020010000000000000100000000000000080000000000000018000000000000002100000001000000020000000000000090030000000000009003000000000000C0000000000000000000000000000000100000000000000000000000000000002900000001000000020000000000000050040000000000005004000000000000780000000000000000000000000000000800000000000000000000000000000033000000010000000600000000000000C814000000000000C804000000000000EC0400000000000000000000000000000400000000000000000000000000000039000000010000000300000000000000C029000000000000C009000000000000E00000000000000000000000000000001000000000000000000000000000000046000000060000000300000000000000A02A000000000000A00A000000000000C0000000000000000300000000000000080000000000000010000000000000004F000000080000000300000000000000602B000000000000600B000000000000A0040000000000000000000000000000010000000000000000000000000000005E0000000100000000000000000000000000000000000000600B00000000000039000000000000000000000000000000010000000000000000000000000000006C0000000100000000000000000000000000000000000000990B0000000000004F00000000000000000000000000000001000000000000000000000000000000780000000100000030000000000000000000000000000000E80B00000000000062000000000000000000000000000000010000000000000001000000000000008300000001000000000000000000000000000000000000004A0C0000000000003900000000000000000000000000000001000000000000000000000000000000930000000100000000000000000000000000000000000000830C0000000000001A00000000000000000000000000000001000000000000000000000000000000A300000003000070000000000000000000000000000000009D0C000000000000F200000000000000000000000000000001000000000000000000000000000000B500000001000000000000000000000000000000000000008F0D0000000000005701000000000000000000000000000001000000000000000000000000000000C10000000100000030000000000000000000000000000000E60E0000000000000500000000000000000000000000000001000000000000000100000000000000CA0000000200000000000000000000000000000000000000F00E0000000000004800000000000000150000000200000008000000000000001800000000000000D20000000300000000000000000000000000000000000000380F000000000000E400000000000000000000000000000001000000000000000000000000000000DC00000003000000000000000000000000000000000000001C100000000000002C00000000000000000000000000000001000000000000000000000000000000"> : vector<5576xi8>
+    vm.import private @hal.buffer.assert(%buffer : !vm.ref<!hal.buffer>, %message : !vm.buffer, %allocator : !vm.ref<!hal.allocator>, %minimum_length : i64, %memory_types : i32, %buffer_usage : i32)
+    vm.import private @hal.buffer_view.create(%buffer : !vm.ref<!hal.buffer>, %source_offset : i64, %source_length : i64, %element_type : i32, %encoding_type : i32, %shape : i64 ...) -> !vm.ref<!hal.buffer_view> attributes {nosideeffects}
+    vm.import private @hal.buffer_view.assert(%buffer_view : !vm.ref<!hal.buffer_view>, %message : !vm.buffer, %element_type : i32, %encoding_type : i32, %shape : i64 ...)
+    vm.import private @hal.buffer_view.buffer(%buffer_view : !vm.ref<!hal.buffer_view>) -> !vm.ref<!hal.buffer> attributes {nosideeffects}
+    vm.import private @hal.buffer_view.dim(%buffer_view : !vm.ref<!hal.buffer_view>, %index : i32) -> i64 attributes {nosideeffects}
+    vm.import private @hal.command_buffer.create(%device : !vm.ref<!hal.device>, %modes : i32, %command_categories : i32, %queue_affinity : i64, %binding_capacity : i32) -> !vm.ref<!hal.command_buffer> attributes {minimum_version = 6 : i32}
+    vm.import private @hal.command_buffer.finalize(%command_buffer : !vm.ref<!hal.command_buffer>)
+    vm.import private @hal.command_buffer.execution_barrier(%command_buffer : !vm.ref<!hal.command_buffer>, %source_stage_mask : i32, %target_stage_mask : i32, %flags : i64)
+    vm.import private @hal.command_buffer.dispatch(%command_buffer : !vm.ref<!hal.command_buffer>, %executable : !vm.ref<!hal.executable>, %entry_point : i32, %workgroup_x : i32, %workgroup_y : i32, %workgroup_z : i32, %flags : i64, %constants : i32 ..., %bindings : tuple<i32, i32, !vm.ref<!hal.buffer>, i64, i64> ...)
+    vm.import private @hal.device.allocator(%device : !vm.ref<!hal.device>) -> !vm.ref<!hal.allocator> attributes {nosideeffects}
+    vm.import private @hal.device.query.i64(%device : !vm.ref<!hal.device>, %category : !vm.buffer, %key : !vm.buffer) -> (i32, i64) attributes {nosideeffects}
+    vm.import private @hal.device.queue.alloca(%device : !vm.ref<!hal.device>, %queue_affinity : i64, %wait_fence : !vm.ref<!hal.fence>, %signal_fence : !vm.ref<!hal.fence>, %pool : i64, %memory_types : i32, %buffer_usage : i32, %allocation_size : i64, %flags : i64) -> !vm.ref<!hal.buffer>
+    vm.import private @hal.device.queue.execute(%device : !vm.ref<!hal.device>, %queue_affinity : i64, %wait_fence : !vm.ref<!hal.fence>, %signal_fence : !vm.ref<!hal.fence>, %command_buffer : !vm.ref<!hal.command_buffer>, %flags : i64)
+    vm.import private @hal.devices.count() -> i32 attributes {nosideeffects}
+    vm.import private @hal.devices.get(%index : i32) -> !vm.ref<!hal.device> attributes {nosideeffects}
+    vm.import private @hal.executable.create(%device : !vm.ref<!hal.device>, %queue_affinity : i64, %executable_format : !vm.buffer, %executable_data : !vm.buffer, %constants : !vm.buffer) -> !vm.ref<!hal.executable> attributes {nosideeffects}
+    vm.import private @hal.fence.create(%device : !vm.ref<!hal.device>, %flags : i64) -> !vm.ref<!hal.fence>
+    vm.import private @hal.fence.await(%timeout_millis : i32, %flags : i64, %fences : !vm.ref<!hal.fence> ...) -> i32 attributes {vm.yield}
+    vm.rodata private @_utf8_input0_DCE99660CEB3F6B {alignment = 1 : i64} "input0"
+    vm.rodata private @_utf8_tensor_FC1814BC4A58F22A {alignment = 1 : i64} "tensor"
+    vm.func private @matmul_dynamic(%arg0: !vm.ref<!hal.buffer_view>) -> !vm.ref<!hal.buffer_view> attributes {iree.reflection = {iree.abi.declaration = "sync func @matmul_dynamic(%input0: tensor<?x?xf32>) -> (%output0: tensor<?x?x8x1xf32>)"}} {
+      %c13 = vm.const.i32 13
+      %c28 = vm.const.i32 28
+      %c3 = vm.const.i32 3
+      %c32 = vm.const.i32 32
+      %c16 = vm.const.i32 16
+      %c553648160 = vm.const.i32 553648160
+      %c1 = vm.const.i32 1
+      %zero = vm.const.i32.zero
+      %c-1 = vm.const.i32 -1
+      %c64 = vm.const.i64 64
+      %c1_0 = vm.const.i64 1
+      %zero_1 = vm.const.i64.zero
+      %null = vm.const.ref.zero : !vm.ref<!hal.fence>
+      %c-1_2 = vm.const.i64 -1
+      %c32_3 = vm.const.i64 32
+      %c4 = vm.const.i64 4
+      %c8 = vm.const.i64 8
+      %c48 = vm.const.i32 48
+      %c3075 = vm.const.i32 3075
+      %__device_0 = vm.global.load.ref @__device_0 : !vm.ref<!hal.device>
+      %__device_0_executable_0_matmul_dynamic_dispatch_0 = vm.global.load.ref @__device_0_executable_0_matmul_dynamic_dispatch_0 : !vm.ref<!hal.executable>
+      %0 = vm.call @hal.buffer_view.dim(%arg0, %zero) {nosideeffects} : (!vm.ref<!hal.buffer_view>, i32) -> i64
+      %1 = vm.call @hal.buffer_view.dim(%arg0, %c1) {nosideeffects} : (!vm.ref<!hal.buffer_view>, i32) -> i64
+      %_utf8_input0_DCE99660CEB3F6B = vm.const.ref.rodata @_utf8_input0_DCE99660CEB3F6B : !vm.buffer
+      vm.call.variadic @hal.buffer_view.assert(%arg0, %_utf8_input0_DCE99660CEB3F6B, %c553648160, %c1, [%0, %1]) : (!vm.ref<!hal.buffer_view>, !vm.buffer, i32, i32, i64 ...)
+      %2 = vm.mul.i64 %0, %c4 : i64
+      %3 = vm.mul.i64 %2, %1 : i64
+      %ref = vm.call @hal.buffer_view.buffer(%arg0) {nosideeffects} : (!vm.ref<!hal.buffer_view>) -> !vm.ref<!hal.buffer>
+      %ref_4 = vm.call @hal.device.allocator(%__device_0) {nosideeffects} : (!vm.ref<!hal.device>) -> !vm.ref<!hal.allocator>
+      %_utf8_tensor_FC1814BC4A58F22A = vm.const.ref.rodata @_utf8_tensor_FC1814BC4A58F22A : !vm.buffer
+      vm.call @hal.buffer.assert(%ref, %_utf8_tensor_FC1814BC4A58F22A, %ref_4, %3, %c16, %c3075) : (!vm.ref<!hal.buffer>, !vm.buffer, !vm.ref<!hal.allocator>, i64, i32, i32) -> ()
+      %eq = vm.cmp.eq.i64 %0, %zero_1 : i64
+      %4 = vm.sub.i64 %0, %c1_0 : i64
+      %5 = vm.div.i64.u %4, %c8 : i64
+      %6 = vm.add.i64 %5, %c1_0 : i64
+      %7 = vm.select.i64 %eq, %zero_1, %6 : i64
+      %8 = vm.mul.i64 %7, %c32_3 : i64
+      %9 = vm.mul.i64 %8, %1 : i64
+      %ref_5 = vm.call @hal.fence.create(%__device_0, %zero_1) : (!vm.ref<!hal.device>, i64) -> !vm.ref<!hal.fence>
+      %ref_6 = vm.call @hal.device.queue.alloca(%__device_0, %c-1_2, %null, %ref_5, %zero_1, %c48, %c3075, %9, %zero_1) : (!vm.ref<!hal.device>, i64, !vm.ref<!hal.fence>, !vm.ref<!hal.fence>, i64, i32, i32, i64, i64) -> !vm.ref<!hal.buffer>
+      %10 = vm.trunc.i64.i32 %0 : i64 -> i32
+      %11 = vm.shr.i64.u %0, %c32 : i64
+      %12 = vm.trunc.i64.i32 %11 : i64 -> i32
+      %13 = vm.trunc.i64.i32 %7 : i64 -> i32
+      %14 = vm.shr.i64.u %7, %c32 : i64
+      %15 = vm.trunc.i64.i32 %14 : i64 -> i32
+      %16 = vm.trunc.i64.i32 %1 : i64 -> i32
+      %17 = vm.shr.i64.u %1, %c32 : i64
+      %18 = vm.trunc.i64.i32 %17 : i64 -> i32
+      %ref_7 = vm.call @hal.command_buffer.create(%__device_0, %c1, %c3, %c-1_2, %zero) : (!vm.ref<!hal.device>, i32, i32, i64, i32) -> !vm.ref<!hal.command_buffer>
+      %slt = vm.cmp.lt.i64.s %zero_1, %7 : i64
+      %19 = vm.xor.i32 %slt, %c1 : i32
+      %20 = vm.sub.i64 %zero_1, %7 : i64
+      %21 = vm.sub.i64 %7, %c1_0 : i64
+      %22 = vm.select.i64 %19, %20, %21 : i64
+      %23 = vm.div.i64.s %22, %c8 : i64
+      %24 = vm.sub.i64 %zero_1, %23 : i64
+      %25 = vm.add.i64 %23, %c1_0 : i64
+      %26 = vm.select.i64 %19, %24, %25 : i64
+      %ult = vm.cmp.lt.i64.u %zero_1, %1 : i64
+      %27 = vm.xor.i32 %ult, %c1 : i32
+      %28 = vm.sub.i64 %zero_1, %1 : i64
+      %29 = vm.sub.i64 %1, %c1_0 : i64
+      %30 = vm.select.i64 %27, %28, %29 : i64
+      %31 = vm.div.i64.s %30, %c64 : i64
+      %32 = vm.sub.i64 %zero_1, %31 : i64
+      %33 = vm.add.i64 %31, %c1_0 : i64
+      %34 = vm.select.i64 %27, %32, %33 : i64
+      %35 = vm.mul.i64 %26, %34 : i64
+      %36 = vm.trunc.i64.i32 %35 : i64 -> i32
+      vm.call.variadic @hal.command_buffer.dispatch(%ref_7, %__device_0_executable_0_matmul_dynamic_dispatch_0, %zero, %36, %c1, %c1, %zero_1, [%10, %12, %13, %15, %16, %18], [(%zero, %zero, %ref, %zero_1, %3), (%zero, %zero, %ref_6, %zero_1, %9)]) : (!vm.ref<!hal.command_buffer>, !vm.ref<!hal.executable>, i32, i32, i32, i32, i64, i32 ..., tuple<i32, i32, !vm.ref<!hal.buffer>, i64, i64> ...)
+      vm.call @hal.command_buffer.execution_barrier(%ref_7, %c28, %c13, %zero_1) : (!vm.ref<!hal.command_buffer>, i32, i32, i64) -> ()
+      vm.call @hal.command_buffer.finalize(%ref_7) : (!vm.ref<!hal.command_buffer>) -> ()
+      %ref_8 = vm.call @hal.fence.create(%__device_0, %zero_1) : (!vm.ref<!hal.device>, i64) -> !vm.ref<!hal.fence>
+      vm.call @hal.device.queue.execute(%__device_0, %c-1_2, %ref_5, %ref_8, %ref_7, %zero_1) : (!vm.ref<!hal.device>, i64, !vm.ref<!hal.fence>, !vm.ref<!hal.fence>, !vm.ref<!hal.command_buffer>, i64) -> ()
+      %37 = vm.call.variadic @hal.fence.await(%c-1, %zero_1, [%ref_8]) : (i32, i64, !vm.ref<!hal.fence> ...) -> i32
+      vm.cond_br %37, ^bb2, ^bb1
+    ^bb1:  // pred: ^bb0
+      %ref_9 = vm.call.variadic @hal.buffer_view.create(%ref_6, %zero_1, %9, %c553648160, %c1, [%7, %1, %c8, %c1_0]) {nosideeffects} : (!vm.ref<!hal.buffer>, i64, i64, i32, i32, i64 ...) -> !vm.ref<!hal.buffer_view>
+      vm.return %ref_9 : !vm.ref<!hal.buffer_view>
+    ^bb2:  // pred: ^bb0
+      vm.fail %37, "failed to wait on timepoint"
+    }
+    vm.export @matmul_dynamic attributes {iree.abi.stub, iree.reflection = {iree.abi.declaration = "sync func @matmul_dynamic(%input0: tensor<?x?xf32>) -> (%output0: tensor<?x?x8x1xf32>)"}}
+    vm.export @__init
+    vm.func private @__init() {
+      %c1 = vm.const.i32 1
+      %null = vm.const.ref.zero : !vm.buffer
+      %c-1 = vm.const.i64 -1
+      %c14 = vm.const.i32 14
+      %c18 = vm.const.i32 18
+      %zero = vm.const.i32.zero
+      %zero_0 = vm.const.i64.zero
+      %c1_1 = vm.const.i64 1
+      %null_2 = vm.const.ref.zero : !vm.ref<!hal.device>
+      %0 = vm.call @hal.devices.count() {nosideeffects} : () -> i32
+      %1 = vm.ext.i32.i64.s %0 : i32 -> i64
+      vm.br ^bb1(%zero_0, %zero_0, %null_2 : i64, i64, !vm.ref<!hal.device>)
+    ^bb1(%2: i64, %3: i64, %4: !vm.ref<!hal.device>):  // 2 preds: ^bb0, ^bb4
+      %rnz = vm.cmp.nz.ref %4 : !vm.ref<!hal.device>
+      %5 = vm.xor.i32 %rnz, %c1 : i32
+      %slt = vm.cmp.lt.i64.s %2, %1 : i64
+      %6 = vm.and.i32 %5, %slt : i32
+      vm.cond_br %6, ^bb2, ^bb5
+    ^bb2:  // pred: ^bb1
+      %7 = vm.trunc.i64.i32 %2 : i64 -> i32
+      %ref = vm.call @hal.devices.get(%7) {nosideeffects} : (i32) -> !vm.ref<!hal.device>
+      %_utf8_hal_device_id_C6650FF277232B5A = vm.const.ref.rodata @_utf8_hal_device_id_C6650FF277232B5A : !vm.buffer
+      %_utf8_local_1A8FF0278D7661D8 = vm.const.ref.rodata @_utf8_local_1A8FF0278D7661D8 : !vm.buffer
+      %8:2 = vm.call @hal.device.query.i64(%ref, %_utf8_hal_device_id_C6650FF277232B5A, %_utf8_local_1A8FF0278D7661D8) {nosideeffects} : (!vm.ref<!hal.device>, !vm.buffer, !vm.buffer) -> (i32, i64)
+      %nz = vm.cmp.nz.i64 %8#1 : i64
+      %9 = vm.select.i32 %8#0, %nz, %zero : i32
+      vm.cond_br %9, ^bb3, ^bb4(%zero : i32)
+    ^bb3:  // pred: ^bb2
+      %_utf8_hal_executable_format_E03EECB63A2AAF52 = vm.const.ref.rodata @_utf8_hal_executable_format_E03EECB63A2AAF52 : !vm.buffer
+      %_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5 = vm.const.ref.rodata @_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5 : !vm.buffer
+      %10:2 = vm.call @hal.device.query.i64(%ref, %_utf8_hal_executable_format_E03EECB63A2AAF52, %_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5) {nosideeffects} : (!vm.ref<!hal.device>, !vm.buffer, !vm.buffer) -> (i32, i64)
+      %nz_3 = vm.cmp.nz.i64 %10#1 : i64
+      %11 = vm.select.i32 %10#0, %nz_3, %zero : i32
+      vm.br ^bb4(%11 : i32)
+    ^bb4(%12: i32):  // 2 preds: ^bb2, ^bb3
+      %eq = vm.cmp.eq.i64 %3, %zero_0 : i64
+      %13 = vm.select.i64 %12, %c1_1, %zero_0 : i64
+      %14 = vm.add.i64 %3, %13 : i64
+      %15 = vm.and.i32 %12, %eq : i32
+      %ref_4 = vm.select.ref %15, %ref, %null_2 : !vm.ref<!hal.device>
+      %16 = vm.add.i64 %2, %c1_1 : i64
+      vm.br ^bb1(%16, %14, %ref_4 : i64, i64, !vm.ref<!hal.device>)
+    ^bb5:  // pred: ^bb1
+      vm.cond_br %5, ^bb6, ^bb7
+    ^bb6:  // pred: ^bb5
+      vm.fail %c18, "HAL device `__device_0` not found or unavailable: #hal.device.target<\22local\22, [#hal.executable.target<\22llvm-cpu\22, \22embedded-elf-riscv_64\22, {cpu = \22\22, cpu_features = \22+m,+a,+f,+d,+zvl256b,+v\22, data_layout = \22e-m:e-p:64:64-i64:64-i128:128-n32:64-S128\22, iree.encoding.resolver = #iree_cpu.cpu_encoding_resolver<>, max_stack_allocation_size = 32768 : i64, native_vector_size = 64 : i64, target_abi = \22lp64d\22, target_triple = \22riscv64-unknown-unknown-eabi-elf\22, ukernels = \22all\22}>]>"
+    ^bb7:  // pred: ^bb5
+      %_utf8_hal_executable_format_E03EECB63A2AAF52_5 = vm.const.ref.rodata @_utf8_hal_executable_format_E03EECB63A2AAF52 : !vm.buffer
+      %_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5_6 = vm.const.ref.rodata @_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5 : !vm.buffer
+      %17:2 = vm.call @hal.device.query.i64(%4, %_utf8_hal_executable_format_E03EECB63A2AAF52_5, %_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5_6) {nosideeffects} : (!vm.ref<!hal.device>, !vm.buffer, !vm.buffer) -> (i32, i64)
+      %nz_7 = vm.cmp.nz.i64 %17#1 : i64
+      %18 = vm.select.i32 %17#0, %nz_7, %zero : i32
+      %19 = vm.select.i64 %18, %zero_0, %c-1 : i64
+      %eq_8 = vm.cmp.eq.i64 %19, %zero_0 : i64
+      vm.global.store.ref %4, @__device_0 : !vm.ref<!hal.device>
+      vm.cond_br %eq_8, ^bb8, ^bb9
+    ^bb8:  // pred: ^bb7
+      %matmul_dynamic_dispatch_0_embedded_elf_riscv_64 = vm.const.ref.rodata @matmul_dynamic_dispatch_0_embedded_elf_riscv_64 : !vm.buffer
+      %ref_9 = vm.call @hal.executable.create(%4, %c-1, %_utf8_embedded_elf_riscv_64_C3BA011E86B77EF5_6, %matmul_dynamic_dispatch_0_embedded_elf_riscv_64, %null) {nosideeffects} : (!vm.ref<!hal.device>, i64, !vm.buffer, !vm.buffer, !vm.buffer) -> !vm.ref<!hal.executable>
+      vm.global.store.ref %ref_9, @__device_0_executable_0_matmul_dynamic_dispatch_0 : !vm.ref<!hal.executable>
+      vm.return
+    ^bb9:  // pred: ^bb7
+      vm.fail %c14, "HAL device `__device_0` does not support any variant of executable `matmul_dynamic_dispatch_0`; available formats: [embedded-elf-riscv_64]"
+    }
+  }
+}
