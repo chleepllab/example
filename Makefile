@@ -1,14 +1,14 @@
 IREE := ~/iree-build
 IREE_V := ~/iree_v-build
-IREE_RVV := ~/iree_rvv-build
+IREE_T := ~/iree_t-build
 IREE_RUN := ~/iree-build-riscv
 IREE_V_RUN := ~/iree_v-build-riscv
-IREE_RVV_RUN := ~/iree_rvv-build-riscv
+IREE_T_RUN := ~/iree_t-build-riscv
 QEMU_BIN=~/riscv/qemu/linux/RISCV/qemu-riscv64
 RISCV_TOOLCHAIN_ROOT=~/riscv/toolchain/clang/linux/RISCV
 
-SRC := conv_d.mlir
-SRC2 := conv_s.mlir
+SRC := matmul.mlir
+SRC2 := matmul.mlir
 SRC3 := matmul.mlir
 #SRC3 := conv_s4.mlir
 OUT_FILE = $(SRC:.mlir=.vmfb)
@@ -37,6 +37,67 @@ D := -cpu rv64
 .PHONY: compile compile_v compil compil_v compil_rvv compile3 compile3_v compile4 compile4_v run rc t1 t2 t3 t4 tun compile2 all runn clean clea
 all: compile
 
+c-%:
+	$(IREE_T)/tools/iree-compile \
+  --iree-hal-target-device=local \
+  --iree-hal-local-target-device-backends=llvm-cpu \
+  --iree-llvmcpu-target-triple=riscv64 \
+  --iree-llvmcpu-target-abi=lp64d \
+  --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+zvl256b,+v" \
+  --iree-opt-data-tiling \
+  --iree-llvmcpu-enable-ukernels=all \
+  --mlir-print-ir-after-all \
+  $*.mlir -o $*.vmfb 2> ir.log
+#  --iree-hal-dump-executable-intermediates-to=new_dumps \
+  --iree-global-opt-experimental-disable-conv-generalization \
+
+cr-%:
+	$(IREE_T)/tools/iree-compile \
+  --iree-hal-target-device=local \
+  --iree-hal-local-target-device-backends=llvm-cpu \
+  --iree-llvmcpu-target-triple=riscv64 \
+  --iree-llvmcpu-target-abi=lp64d \
+  --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+zvl256b,+v" \
+  --iree-opt-data-tiling \
+  --iree-llvmcpu-enable-inner-tiled \
+  --iree-llvmcpu-enable-llvm-ukernels=inner_tiled \
+  --mlir-print-ir-after-all \
+  $*.mlir -o $*.vmfb 2> ir.log
+#  --iree-hal-dump-executable-intermediates-to=new_dumps \
+
+base-%:
+	$(IREE_T)/tools/iree-compile \
+  --iree-hal-target-device=local \
+  --iree-hal-local-target-device-backends=llvm-cpu \
+  --iree-llvmcpu-target-triple=riscv64 \
+  --iree-llvmcpu-target-abi=lp64d \
+  --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+zvl256b,+v" \
+  --iree-opt-data-tiling \
+  --iree-llvmcpu-enable-ukernels=none \
+  --mlir-print-ir-after-all \
+  $*.mlir -o $*.vmfb 2> ir_baseline.log
+
+ct-%:
+	$(IREE_T)/tools/iree-compile \
+  --iree-hal-target-device=local \
+  --iree-hal-local-target-device-backends=llvm-cpu \
+  --iree-llvmcpu-target-cpu-features="+avx512f,+avx512bf16" \
+  --iree-opt-data-tiling \
+  --iree-llvmcpu-enable-inner-tiled \
+  --iree-llvmcpu-enable-llvm-ukernels=inner_tiled \
+  --iree-hal-dump-executable-intermediates-to=iree_ukernel_dumps \
+  --mlir-print-ir-after-all \
+  $*.mlir -o $*.vmfb 2> ir.log
+
+r-%:
+	$(IREE_T)/tools/iree-run-module \
+  --device=local-task \
+  --module=$*.vmfb \
+  --function=matmul \
+  --input="64x64xbf16=1" \
+  --input="64x64xbf16=1" \
+  --input="64x64xf32=0"
+
 compile:
 	$(IREE)/tools/iree-compile \
   --iree-hal-target-device=local \
@@ -45,6 +106,7 @@ compile:
   --iree-llvmcpu-target-abi=lp64d \
   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+zvl256b,+v" \
   --iree-llvmcpu-enable-ukernels=all \
+  --iree-hal-dump-executable-configurations-to=dump \
   --mlir-print-ir-after-all \
   2> log.log \
   $(SRC) -o $(OUT_FILE)
@@ -136,6 +198,7 @@ compile3:
   --iree-llvmcpu-enable-ukernels=all \
   --iree-hal-dump-executable-configurations-to=dump \
   --debug-only=iree-cpu-encoding-external-models \
+  2> log.log \
   $(SRC3) -o $(OUT_FILE3)
 #  --mlir-print-ir-after-all \
 
@@ -172,9 +235,10 @@ compile4_v:
   --iree-llvmcpu-target-triple=riscv64 \
   --iree-llvmcpu-target-abi=lp64d \
   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+zvl256b,+v" \
-  --iree-hal-dump-executable-configurations-to=dump \
+  --iree-llvmcpu-enable-ukernels=all \
+  --iree-global-opt-data-tiling \
   --mlir-print-ir-after-all \
-  2> log4_v.log \
+  2> matmul_v.log \
   $(SRC3) -o $(OUT_FILE3)
 #  --iree-llvmcpu-enable-ukernels=matmul \
 
@@ -301,8 +365,11 @@ compile2:
 #-mllvm -scalable-vectorization=only --target=riscv64-unknown-elf -march=rv64gcv1p0 -menable-experimental-extensions -O3 -mllvm --scalable-vectorization=preferred -mllvm -riscv-v-vector-bits-min=128 -o $(IR_FILE) $(SRC)
 
 runn:
-	$(IREE) $(L) $(SRC) -o $(OUT_FILE)
+	$(IREE)/tools/iree-compile $(L) $(SRC) -o $(OUT_FILE)
 	$(QEMU_BIN) $(C) -L $(RISCV_TOOLCHAIN_ROOT)/sysroot/ $(IREE_RUN) --device=local-task --module=$(OUT_FILE) --function=forward --input="1x3x32x32xf32=1"
+
+clean-%:
+	rm -f $*.vmfb
 
 clean:
 	rm -f $(OUT_FILE)

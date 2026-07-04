@@ -1,7 +1,7 @@
 #!/bin/bash
-cd ~/iree
-cmake --build ../iree-build/ -- -j32
-cmake --build ../iree-build-riscv/ -- -j32
+cd ~/iree_v
+cmake --build ../iree_v-build/ -- -j32
+cmake --build ../iree_v-build-riscv/ -- -j32
 cd ~/example
 make cle
 make compile4_v
